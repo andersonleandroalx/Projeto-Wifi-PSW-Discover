@@ -6,7 +6,8 @@ def search_password():
     wifi_name = wifipswdiscover_sc.inputssid.text()
     if wifi_name:
         try:
-            informations = subprocess.check_output(["netsh", "wlan", "show", "profile", wifi_name, "key", "=", "clear"], encoding='cp860')
+            informations = subprocess.check_output(["netsh", "wlan", "show", "profile", wifi_name, "key", "=", "clear"],
+                                                   encoding='cp860')
             wifipswdiscover_sc.exibicao.setText('Consulta realizada com sucesso!!')
             wifipswdiscover_sc.textBrowser.setText(informations)
         except:
